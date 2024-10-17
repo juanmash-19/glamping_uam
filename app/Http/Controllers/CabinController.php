@@ -32,7 +32,7 @@ class CabinController extends Controller
      */
     public function show(Cabin $cabin)
     {
-        //
+        return response()->json(['data' => $product], 200);
     }
 
     /**
