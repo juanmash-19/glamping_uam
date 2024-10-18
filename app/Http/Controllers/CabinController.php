@@ -31,7 +31,6 @@ class CabinController extends Controller
      * Display the specified resource.
      */
     public function show(Cabin $cabin)
-    {
         $cabins = Cabin::orderBy('name','asc')->get();
         return response ()->json(['data' => $cabins],200);
     }
