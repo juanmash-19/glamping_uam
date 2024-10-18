@@ -22,7 +22,6 @@ class CabinController extends Controller
     {
         //
         $cabin = Cabin::create($request->all());
-
         return response()->
             json(['data' => $cabin], 201);
     }
@@ -32,7 +31,8 @@ class CabinController extends Controller
      */
     public function show(Cabin $cabin)
     {
-        return response()->json(['data' => $product], 200);
+        $cabins = Cabin::orderBy('name','asc')->get();
+        return response ()->json(['data' => $cabins],200);
     }
 
     /**
