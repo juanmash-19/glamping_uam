@@ -32,7 +32,8 @@ class CabinController extends Controller
      */
     public function show(Cabin $cabin)
     {
-        //
+        $cabins = Cabin::orderBy('name','asc')->get();
+        return response ()->json(['data' => $cabins],200);
     }
 
     /**
