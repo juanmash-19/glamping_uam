@@ -9,5 +9,10 @@ class CabinLevel extends Model
 {
     use HasFactory;
     //protected $table='cabin_levels';
-    protected $fillable = ['name', 'description', 'color'];
+    //protected $fillable = ['name', 'description', 'color'];
+
+    public function cabins(): HasMany 
+    {
+        return $this->hasMany(Cabin::class 'cabinlevel_id');
+    }
 }

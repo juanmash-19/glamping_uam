@@ -12,6 +12,11 @@ class Cabin extends Model
     protected $fillable = [
         'name', 
         'cabinlevel_id', 
-        'capacity'
+        'capacity',
     ];
+
+    public function CabinLevel  cabinLevel(): BelongsTo
+    {
+        return $this->belongsTo(CabinLevel::class);  // Relación 1:1 con CabinLevel
+    }
 }
