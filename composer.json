@@ -31,6 +31,13 @@
         }
     },
     "scripts": {
+        "start": "docker start backend",
+        "stop": "docker stop backend",
+        "ssh": "docker exec -it backend bash",
+        
+        "lint": "./vendor/bin/pint --test -v",
+        "lint:fix": "./vendor/bin/pint --repair -v",
+        "lint:fix:dirty": "./vendor/bin/pint --repair --dirty -v",
 
         "serve": [
             "php artisan serve --host=0.0.0.0 --port=80"

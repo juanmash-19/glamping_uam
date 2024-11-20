@@ -9,14 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('cabin_levels', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->string('color', 7);
-            $table->timestamps();
+            $table->string('name'); // Columna para el nombre
+            $table->text('description')->nullable(); // Columna para la descripción
+            $table->string('color', 7); // Columna para el color en hexadecimal
+            $table->timestamps(); // created_at y updated_at
         });
     }
 

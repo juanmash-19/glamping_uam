@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id('id_servicio');          // Primary key
             $table->string('nombre_servicio', 100); // Nombre del servicio
             $table->timestamps();                // created_at y updated_at

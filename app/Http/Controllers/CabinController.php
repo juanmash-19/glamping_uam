@@ -45,13 +45,9 @@ class CabinController extends Controller
 
         //dd($sort, $type);
 
-        $cabin = Cabin::orderBy($sort,$type)->get();
-        
-        return response()->
-            json([new CabinCollection ($cabin)], 200);
-
-        //->json(['data' => CabinResource ($cabin)], 200);
-
+        $cabins = Cabin::orderBy($sort,$type)->get();
+        return response()->json(['data' => $cabins], 200);
+            /* ->json([new CabinCollection ($cabin)], 200); */ 
     }
 
     /**

@@ -15,8 +15,8 @@ class Cabin extends Model
         'capacity',
     ];
 
-    public function CabinLevel  cabinLevel(): BelongsTo
+/*     public function CabinLevel  cabinLevel(): BelongsTo
     {
         return $this->belongsTo(CabinLevel::class);  // Relación 1:1 con CabinLevel
-    }
+    } */
 }

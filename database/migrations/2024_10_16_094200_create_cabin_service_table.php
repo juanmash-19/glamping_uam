@@ -12,19 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cabin_service', function (Blueprint $table) {
-            $table->id('id_cabin_service');          // Primary key
-
-            // Clave foránea a la tabla 'cabanas'
-            $table->foreignId('id')
-                  ->constrained('cabin') // Nombre de la tabla relacionada
-                  ->onDelete('cascade');    // Comportamiento al eliminar
-
-            // Clave foránea a la tabla 'servicios'
-            $table->foreignId('id_servicio')
-                  ->constrained('service') // Nombre de la tabla relacionada
-                  ->onDelete('cascade');      // Comportamiento al eliminar
-
-            $table->timestamps(); // Para created_at y updated_at
+            $table->id('id_cabin_service'); // Clave primaria
+            $table->foreignId('id_cabin')->constrained('cabins')->onDelete('cascade');
+            $table->foreignId('id_servicio')->constrained('services', 'id_servicio')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
